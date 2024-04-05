@@ -1,7 +1,9 @@
 services:
-  - name: docker
-    env:
-      - DOCKER_REPO_NAME=albin4242/MINECRAFTRDP
-    buildCommand: docker build -t $DOCKER_REPO_NAME .
-    startCommand: docker run -p 6070:80 $DOCKER_REPO_NAME
+  - name: ubuntu-desktop
+    env: docker
+    dockerfile: Dockerfile
+    plan: free
+    ports:
+      - 6070:80
+
     
